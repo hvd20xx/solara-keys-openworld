@@ -1,0 +1,6 @@
+[
+  { "name": "1-cover-chase.jpg", "query": "?shot=1&seed=42" },
+  { "name": "2-onfoot-downtown.jpg", "query": "?shot=2&seed=42" },
+  { "name": "3-combat-heist.jpg", "query": "?shot=3&seed=42" },
+  { "name": "4-garage-hub.jpg", "query": "?shot=4&seed=42" }
+]

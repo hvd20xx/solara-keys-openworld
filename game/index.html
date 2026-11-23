@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOLARA KEYS: HEATLINE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="viewport"></div>
+
+  <div id="hud-root">
+    <!-- Top-Left: District Banner & Mission Objective -->
+    <div class="hud-top-left">
+      <div class="hud-panel district-card">
+        <div id="district-name">PALM STRIP</div>
+        <div id="district-tagline">Oceanfront Deco Boulevard</div>
+      </div>
+      <div class="hud-panel mission-card">
+        <div class="mission-header">
+          <span id="mission-title">NEXT: PIER DROP</span>
+          <span id="mission-dist">120m</span>
+        </div>
+        <div id="mission-desc">Explore Solara Keys or head to the golden beacon to begin.</div>
+        <div id="mission-progress">0/6 MISSIONS</div>
+      </div>
+    </div>
+
+    <!-- Top-Right: 5-Star SKPD Heat, Cash/Rep, Weapon Wheel -->
+    <div class="hud-top-right">
+      <div class="hud-panel stats-card">
+        <div id="wanted-stars" aria-label="Wanted level"></div>
+        <div class="money-row">
+          <span id="cash-value">$2,500</span>
+          <span id="rep-value">REP 100</span>
+        </div>
+      </div>
+      <div id="weapon-wheel"></div>
+      <div class="hud-actions">
+        <button id="hud-hub-btn" class="hud-btn">HUB / GARAGE [ESC]</button>
+        <button id="hud-mute-btn" class="hud-btn">AUDIO: ON</button>
+      </div>
+    </div>
+
+    <!-- Bottom-Left: Live Canvas2D Minimap Radar -->
+    <div class="hud-bottom-left">
+      <div class="minimap-frame">
+        <canvas id="minimap-canvas" width="220" height="220"></canvas>
+      </div>
+      <div class="minimap-legend">
+        <span><i class="dot dot-gold"></i>MISSION</span>
+        <span><i class="dot dot-green"></i>GARAGE</span>
+        <span><i class="dot dot-red"></i>SKPD</span>
+      </div>
+    </div>
+
+    <!-- Bottom-Right: Health, Armor, Speedometer, Radio -->
+    <div class="hud-bottom-right">
+      <div class="hud-panel vitals-card">
+        <div class="vital-row">
+          <span>HP</span>
+          <div class="bar-track"><div id="health-fill"></div></div>
+          <span id="health-text">100</span>
+        </div>
+        <div class="vital-row">
+          <span>ARMOR</span>
+          <div class="bar-track"><div id="armor-fill"></div></div>
+          <span id="armor-text">60</span>
+        </div>
+      </div>
+      <div id="speed-panel" class="hud-panel">
+        <div class="speed-top">
+          <div><span id="speed-value">0</span><span class="speed-unit">KM/H</span></div>
+          <span id="gear-value">GN</span>
+        </div>
+        <div class="speed-meta">
+          <span id="vehicle-name">COBALT GT</span>
+          <span id="drift-tag" class="hidden">DRIFT</span>
+        </div>
+        <div class="radio-row">
+          <span id="radio-name">98.4 SUNSET WAVE</span>
+          <span class="radio-key">[Q] RADIO</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center Prompts & Banners -->
+    <div class="hud-center-bottom">
+      <div id="prompt-pill" class="hidden">[F] ENTER VEHICLE</div>
+      <div class="controls-strip">WASD Drive/Move · SPACE Drift · F Steal/Exit · LMB Fire · 1-4 Weapons · Q Radio · G Garage · ESC Hub</div>
+    </div>
+    <div id="toast-banner" class="hidden"></div>
+    <div id="state-banner" class="hidden"></div>
+  </div>
+
+  <!-- Start / Career / Save Slots / Missions / Safehouse Garage Hub -->
+  <div id="hub-overlay">
+    <div class="hub-shell">
+      <div class="hub-header">
+        <div>
+          <div class="brand-title">SOLARA KEYS: HEATLINE</div>
+          <div id="hub-title-sub">Open-World Coastal Crime · 5 Districts · 6 Missions · 5-Star SKPD</div>
+        </div>
+        <div class="hub-header-right">
+          <div class="hub-wallet">
+            <div id="hub-cash">$2,500</div>
+            <div id="hub-rep">100 REP</div>
+          </div>
+          <button id="hub-play-btn">ENTER SOLARA KEYS</button>
+        </div>
+      </div>
+
+      <div class="hub-grid">
+        <div class="hub-col">
+          <h3>Career Save Slots</h3>
+          <div id="hub-slots"></div>
+        </div>
+        <div class="hub-col">
+          <h3>Story Missions (6)</h3>
+          <div id="hub-missions"></div>
+        </div>
+        <div class="hub-col">
+          <h3>Cruz Safehouse Garage</h3>
+          <div id="hub-upgrades"></div>
+        </div>
+      </div>
+
+      <div class="hub-footer">
+        <span><strong>WASD</strong> Drive &amp; Move</span>
+        <span><strong>SPACE</strong> Handbrake Drift</span>
+        <span><strong>F / E</strong> Carjack / Exit</span>
+        <span><strong>MOUSE + LMB</strong> Aim &amp; Fire</span>
+        <span><strong>1–4</strong> Weapons</span>
+        <span><strong>Q</strong> Radio</span>
+        <span><strong>G</strong> Garage</span>
+        <span><strong>ESC</strong> Career Hub</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="vendor/three.min.js"></script>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
